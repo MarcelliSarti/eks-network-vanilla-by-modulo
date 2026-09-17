@@ -1,11 +1,9 @@
-variable "project_name" {
-  type = string
-}
-
+## Commom variables
 variable "region" {
   type = string
 }
 
+## Network variables
 variable "vpc_cidr" {
   type        = string
   description = "CIDR principal da VPC"
@@ -43,4 +41,36 @@ variable "database_subnets" {
     availability_zone = string
   }))
   default = []
+}
+
+## Cluster variables
+variable "k8s_version" {
+
+}
+
+variable "auto_scale_options" {
+  type = object({
+    min     = number
+    max     = number
+    desired = number
+  })
+}
+
+variable "nodes_instance_sizes" {
+  type = list(string)
+}
+
+variable "addon_cni_version" {
+  type    = string
+  default = "v1.23.0-eksbuild.1"
+}
+
+variable "addon_coredns_version" {
+  type    = string
+  default = "v1.13.2-eksbuild.11"
+}
+
+variable "addon_kubeproxy_version" {
+  type    = string
+  default = "v1.35.3-eksbuild.18"
 }

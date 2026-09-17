@@ -1,10 +1,10 @@
 module "vpc" {
   source = "github.com/MarcelliSarti/eks-network?ref=0.0.1"
 
-  project_name = var.project_name
+  project_name = "linuxtips-vpc"
   region       = var.region
 
-  vpc_cidr            = var.vpc_cidr
+  vpc_cidr             = var.vpc_cidr
   vpc_additional_cidrs = var.vpc_additional_cidrs
 
   public_subnets   = var.public_subnets
