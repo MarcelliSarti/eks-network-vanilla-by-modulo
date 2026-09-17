@@ -1,5 +1,5 @@
 module "cluster" {
-  source = "github.com/MarcelliSarti/eks-vanilla?ref=0.0.7"
+  source = "github.com/MarcelliSarti/eks-vanilla?ref=0.0.8"
 
   providers = {
     aws  = aws
